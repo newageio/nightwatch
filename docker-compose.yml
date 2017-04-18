@@ -1,0 +1,17 @@
+version: '2'
+services:
+  chromedriver:
+    image: blueimp/chromedriver
+    environment:
+      - VNC_ENABLED=true
+      - EXPOSE_X11=true
+    ports:
+      - 5901:5900
+  nightwatch:
+    image: newage/nightwatch
+    links:
+      - chromedriver
+    environment:
+      - WAIT_FOR_HOSTS=chromedriver:4444 chromedriver:6060
+    volumes:
+      - ./test:/opt/test/

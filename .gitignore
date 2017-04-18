@@ -1,0 +1,7 @@
+*.DS_Store
+/test/screenshots
+/test/videos
+/.idea/
+/test/node_modules
+/test/videos/*
+/test/screenshots/*
